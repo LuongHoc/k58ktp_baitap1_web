@@ -30,12 +30,12 @@ Output: Số bước (Steps), Năng lượng tiêu hao (Calories)
 ### B. Project 1 — Class Library (DLL)
 1. Tại Solution Explorer → chuột phải vào Solution StepSuite → Add → New Project….
 
-<img width="1081" height="562" alt="image" src="https://github.com/user-attachments/assets/a3f2eb28-eec2-42c2-a71b-29e406d3b7a4" />
+<img width="1881" height="1026" alt="image" src="https://github.com/user-attachments/assets/56dd86e4-0c2b-462f-a5f0-fabd4d91d9e1" />
 
 
 2. Tìm Class Library (.NET Framework)-> Chọn -> Next.
 
-<img width="1720" height="924" alt="image" src="https://github.com/user-attachments/assets/84957d00-467d-4caa-9773-d94f0fe2a62c" />
+<img width="1879" height="1008" alt="image" src="https://github.com/user-attachments/assets/567d49dd-0528-4280-8064-e3a00ac87a99" />
 
 3. Project name: StepLib 
 
@@ -63,6 +63,8 @@ Output: Số bước (Steps), Năng lượng tiêu hao (Calories)
 
     Frame work: Chọn .NET Framework 2.0 -> Create
 
+<img width="1886" height="1024" alt="image" src="https://github.com/user-attachments/assets/92042076-b59c-4cb3-99b5-f7dccf39a5de" />
+
 4. Thêm tham chiếu tới DLL:
 
 Solution Explorer → StepConsole → chuột phải References → Add Reference… → tab Projects → tích StepLib → OK.
@@ -74,9 +76,10 @@ Solution Explorer → StepConsole → chuột phải References → Add Referenc
 5. Ctrl+Shift+B (Build) → Run
 <img width="1909" height="1011" alt="image" src="https://github.com/user-attachments/assets/744aaae5-ffe8-49e6-a80e-41b1a43dbdb8" />
 
-### B.Project 3 -	Windows Form Application
+### D.Project 3 -	Windows Form Application
 1. Tại Solution Explorer → chuột phải vào Solution StepSuite → Add → New Project….
 
+<img width="1887" height="1024" alt="image" src="https://github.com/user-attachments/assets/0f181f6e-cede-4644-970e-4b9289454678" />
 
 2. Chọn Windows Forms App (.NET Framework)->Next.
 
@@ -86,6 +89,7 @@ Solution Explorer → StepConsole → chuột phải References → Add Referenc
 
    Frame work: Chọn .NET Framework 2.0 -> Create
 
+<img width="1690" height="911" alt="image" src="https://github.com/user-attachments/assets/1bd945a9-a3f1-49d5-95cf-839e6873cc60" />
 
 
 4. Thêm tham chiếu DLL
@@ -111,17 +115,26 @@ Tạo giao diện
 
 <img width="1914" height="1025" alt="image" src="https://github.com/user-attachments/assets/7d84e956-335d-42ce-8d8e-6d82d2db6417" />
 
-### B5. Project 4 — WebForms
+### E. Project 4 — WebForms
 
 1. Tại Solution Explorer → chuột phải vào Solution StepSuite → Add → New Project….
 
-Solution → Add → New Project… → ASP.NET Web Application (.NET Framework).
+<img width="1887" height="1024" alt="image" src="https://github.com/user-attachments/assets/0f181f6e-cede-4644-970e-4b9289454678" />
 
-Project name: StepWeb → Create → chọn template Empty (hoặc “Web Forms” tối giản) → Create.
+2. Chọn ASP.NET Web Application (.NET Framework)->Next.
 
-Properties → Target framework = .NET Framework 2.0 → Yes.
+<img width="1741" height="915" alt="image" src="https://github.com/user-attachments/assets/7cc6c828-79be-4490-bb40-ce5c9c4e2281" />
 
-Thêm tham chiếu:
+3. Project name: StepWeb → Create
+
+<img width="1805" height="935" alt="image" src="https://github.com/user-attachments/assets/488f5422-95e1-433a-8216-fa0657478130" />
+
+chọn template Empty → Create.
+
+<img width="1627" height="936" alt="image" src="https://github.com/user-attachments/assets/5e6de15a-7500-4d75-8e9e-2d31848a3d4a" />
+
+
+4. Thêm tham chiếu:
 
 StepWeb → References → Add Reference… → Projects → tích StepLib → OK.
 
@@ -130,7 +143,7 @@ StepWeb → References → Add Reference… → Projects → tích StepLib → O
 <img width="1701" height="911" alt="image" src="https://github.com/user-attachments/assets/ea3c9b15-327b-4438-a489-03e4cfba0bc4" />
 
 
-Thêm file index.html:
+5. Thêm file index.html
 
 StepWeb → chuột phải → Add → New Item… → HTML Page → Name: index.html → Add.
 
@@ -138,7 +151,7 @@ StepWeb → chuột phải → Add → New Item… → HTML Page → Name: index
 
 <img width="1688" height="917" alt="image" src="https://github.com/user-attachments/assets/cdbdcc15-1ec1-4a74-b789-e1e36a781fa7" />
 
-Thêm file api.aspx:
+6. Thêm file api.aspx:
 
 StepWeb → chuột phải → Add → New Item… → Web Form → Name: api.aspx → Add.
 
@@ -148,7 +161,7 @@ StepWeb → chuột phải → Add → New Item… → Web Form → Name: api.as
 
 VS tự tạo kèm api.aspx.cs. 
 
-Build → Run
+7. Build → Run
 <img width="1920" height="1026" alt="image" src="https://github.com/user-attachments/assets/d194f6fd-dcda-47c6-8f2f-f161a08daac1" />
 
 
