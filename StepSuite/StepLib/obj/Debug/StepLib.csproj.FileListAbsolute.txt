@@ -1,0 +1,6 @@
+D:\StepSuite\StepLib\bin\Debug\StepLib.dll
+D:\StepSuite\StepLib\bin\Debug\StepLib.pdb
+D:\StepSuite\StepLib\obj\Debug\StepLib.csproj.AssemblyReference.cache
+D:\StepSuite\StepLib\obj\Debug\StepLib.csproj.CoreCompileInputs.cache
+D:\StepSuite\StepLib\obj\Debug\StepLib.dll
+D:\StepSuite\StepLib\obj\Debug\StepLib.pdb

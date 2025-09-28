@@ -1,0 +1,407 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Số Bước — Web (by Học)</title>
+    <!-- dẹp cảnh báo favicon 404 -->
+    <link rel="icon" href="data:;base64,=">
+    <style>
+        :root {
+            --bg: linear-gradient(135deg,#eef3ff, #f5f7fb);
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --primary: #2563eb;
+            --primary-600: #1d4ed8;
+            --ring: rgba(37,99,235,.35);
+            --ok: #10b981;
+            --warn: #ef4444;
+            --border: #e5e7eb;
+            --shadow: 0 10px 30px rgba(2,6,23,.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: radial-gradient(1200px 800px at 10% 10%, #0b1220, #0a0f1b);
+                --card-bg: #0f172a;
+                --text: #e2e8f0;
+                --muted: #94a3b8;
+                --primary: #60a5fa;
+                --primary-600: #3b82f6;
+                --ring: rgba(96,165,250,.35);
+                --ok: #34d399;
+                --warn: #f87171;
+                --border: #1f2937;
+                --shadow: 0 10px 30px rgba(0,0,0,.35);
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 820px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 22px 22px 10px 22px;
+            border-bottom: 1px solid var(--border);
+            background: radial-gradient(800px 300px at -10% -20%, rgba(37,99,235,.08), transparent 60%), radial-gradient(800px 300px at 110% -20%, rgba(16,185,129,.08), transparent 60%);
+        }
+
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: clamp(20px, 3vw, 28px);
+            letter-spacing: .2px;
+        }
+
+        .sub {
+            margin: 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .content {
+            padding: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 720px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .label {
+            font-weight: 600;
+        }
+
+        .input-wrap {
+            position: relative;
+        }
+
+        .input {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 12px 14px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color .15s, box-shadow .15s, transform .05s;
+        }
+
+            .input:focus {
+                border-color: var(--primary);
+                box-shadow: 0 0 0 6px var(--ring);
+            }
+
+        .unit {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 13px;
+            color: var(--muted);
+            background: rgba(148,163,184,.12);
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            pointer-events: none;
+        }
+
+        .with-unit {
+            padding-right: 64px;
+        }
+
+        .chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: -4px;
+        }
+
+        .chip {
+            border: 1px dashed var(--border);
+            background: transparent;
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all .15s;
+        }
+
+            .chip:hover {
+                border-style: solid;
+                color: var(--text);
+            }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            grid-column: 1 / -1;
+            margin-top: 4px;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: transform .05s, box-shadow .15s, background .2s;
+        }
+
+            .btn:active {
+                transform: translateY(1px);
+            }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 6px 18px rgba(37,99,235,.25);
+        }
+
+            .btn-primary:hover {
+                background: var(--primary-600);
+            }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .result {
+            grid-column: 1 / -1;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            background: linear-gradient(180deg, rgba(148,163,184,.08), transparent 60%);
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            white-space: pre-wrap;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        /* loading spinner */
+        .loading {
+            position: relative;
+            color: var(--muted);
+        }
+
+            .loading:before {
+                content: "";
+                width: 18px;
+                height: 18px;
+                border: 3px solid transparent;
+                border-top-color: var(--primary);
+                border-right-color: var(--primary);
+                border-radius: 50%;
+                position: absolute;
+                left: 16px;
+                animation: spin .7s linear infinite;
+            }
+
+            .loading span {
+                margin-left: 40px;
+            }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ok {
+            border-color: rgba(16,185,129,.35);
+            background: rgba(16,185,129,.06);
+        }
+
+        .err {
+            border-color: rgba(239,68,68,.45);
+            background: rgba(239,68,68,.06);
+        }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <section class="card">
+            <div class="header">
+                <h1>Hệ thống đo “số bước đơn giản”</h1>
+                <p class="sub">Phiên bản Web <strong>(by Học)</strong> — nhập thông số và bấm <em>Tính</em>.</p>
+            </div>
+
+            <div class="content">
+                <!-- KM -->
+                <div class="field">
+                    <label class="label" for="km">Quãng đường</label>
+                    <div class="input-wrap">
+                        <input id="km" class="input with-unit" type="text" placeholder="vd 1.5" oninput="sanitize(this)">
+                        <span class="unit">km</span>
+                    </div>
+                    <div class="chips">
+                        <button class="chip" data-km="1.0" data-kg="60" data-step="0.75">1.0km·60kg</button>
+                        <button class="chip" data-km="1.5" data-kg="60" data-step="0.75">1.5km·60kg</button>
+                        <button class="chip" data-km="2.0" data-kg="70" data-step="0.75">2.0km·70kg</button>
+                    </div>
+                </div>
+
+                <!-- KG -->
+                <div class="field">
+                    <label class="label" for="kg">Trọng lượng</label>
+                    <div class="input-wrap">
+                        <input id="kg" class="input with-unit" type="text" placeholder="vd 60" oninput="sanitize(this)">
+                        <span class="unit">kg</span>
+                    </div>
+                </div>
+
+                <!-- STEP -->
+                <div class="field">
+                    <label class="label" for="step">Chiều dài bước <span class="sub" style="font-weight:400"> (tùy chọn)</span></label>
+                    <div class="input-wrap">
+                        <input id="step" class="input with-unit" type="text" placeholder="vd 0.75 (bỏ trống được)" oninput="sanitize(this)">
+                        <span class="unit">m</span>
+                    </div>
+                </div>
+
+                <!-- actions -->
+                <div class="actions">
+                    <button id="btnCalc" class="btn btn-primary" onclick="calc()">Tính</button>
+                    <button class="btn btn-ghost" onclick="resetForm()">Nhập lại</button>
+                    <span id="tip" class="sub" aria-live="polite">Mẹo: Nhấn Enter để tính nhanh.</span>
+                </div>
+
+                <!-- result -->
+                <div id="out" class="result muted">Nhập số liệu và bấm <strong>Tính</strong> để xem kết quả…</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // ------- helpers -------
+        function sanitizeNumber(s) { return String(s || '').replace(',', '.').replace(/[^\d.]/g, ''); }
+        function toNum(s) { s = sanitizeNumber(s); var v = parseFloat(s); return (isNaN(v) || v < 0) ? 0 : v; }
+        function sanitize(el) { el.value = sanitizeNumber(el.value); }
+        function setOutLoading() { var out = document.getElementById('out'); out.className = 'result loading'; out.innerHTML = '<span>Đang tính…</span>'; }
+        function setOutOk(txt) { var out = document.getElementById('out'); out.className = 'result ok'; out.textContent = txt; }
+        function setOutErr(txt) { var out = document.getElementById('out'); out.className = 'result err'; out.textContent = 'Lỗi: ' + txt; }
+        function setOutIdle() { var out = document.getElementById('out'); out.className = 'result muted'; out.textContent = 'Nhập số liệu và bấm Tính để xem kết quả…'; }
+
+        // ------- quick fill chips -------
+        document.addEventListener('click', function (e) {
+            var t = e.target;
+            if (t.classList && t.classList.contains('chip')) {
+                document.getElementById('km').value = sanitizeNumber(t.getAttribute('data-km') || '');
+                document.getElementById('kg').value = sanitizeNumber(t.getAttribute('data-kg') || '');
+                document.getElementById('step').value = sanitizeNumber(t.getAttribute('data-step') || '');
+            }
+        });
+
+        // ------- Enter to submit -------
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') { calc(); }
+        });
+
+        function resetForm() {
+            document.getElementById('km').value = '';
+            document.getElementById('kg').value = '';
+            document.getElementById('step').value = '';
+            setOutIdle();
+            document.getElementById('km').focus();
+        }
+
+        // ------- main action -------
+        async function calc() {
+            // tối thiểu: cần km & kg > 0
+            var km = toNum(document.getElementById('km').value);
+            var kg = toNum(document.getElementById('kg').value);
+            var step = toNum(document.getElementById('step').value);
+
+            if (km <= 0 || kg <= 0) {
+                setOutErr('Vui lòng nhập quãng đường (km) và trọng lượng (kg) lớn hơn 0.');
+                return;
+            }
+
+            var btn = document.getElementById('btnCalc');
+            btn.disabled = true; btn.style.opacity = .8;
+            setOutLoading();
+
+            try {
+                var body = new URLSearchParams({
+                    distanceKm: String(km),
+                    weightKg: String(kg),
+                    stepLengthM: String(step)
+                });
+
+                var resp = await fetch('/api.aspx', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                    body: body
+                });
+
+                var txt = await resp.text();
+                var data = null; try { data = JSON.parse(txt); } catch (e) { }
+
+                if (!resp.ok) {
+                    setOutErr((data && data.error) ? data.error : ('HTTP ' + resp.status + ' — ' + txt));
+                    return;
+                }
+
+                if (data && data.ok) {
+                    setOutOk('✅ Steps: ' + data.steps + '\n🔥 Calories: ' + data.kcal + '\n' + data.note);
+                } else {
+                    setOutErr('Phản hồi không hợp lệ:\n' + txt);
+                }
+            } catch (err) {
+                setOutErr('Kết nối thất bại: ' + err);
+            } finally {
+                btn.disabled = false; btn.style.opacity = 1;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+D:\StepSuite\StepConsole\bin\Debug\StepConsole.exe
+D:\StepSuite\StepConsole\bin\Debug\StepConsole.pdb
+D:\StepSuite\StepConsole\bin\Debug\StepLib.dll
+D:\StepSuite\StepConsole\bin\Debug\StepLib.pdb
+D:\StepSuite\StepConsole\obj\Debug\StepConsole.csproj.AssemblyReference.cache
+D:\StepSuite\StepConsole\obj\Debug\StepConsole.csproj.CoreCompileInputs.cache
+D:\StepSuite\StepConsole\obj\Debug\StepCons.A9B32153.Up2Date
+D:\StepSuite\StepConsole\obj\Debug\StepConsole.exe
+D:\StepSuite\StepConsole\obj\Debug\StepConsole.pdb

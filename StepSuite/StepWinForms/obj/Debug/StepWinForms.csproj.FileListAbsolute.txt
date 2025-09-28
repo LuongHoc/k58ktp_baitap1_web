@@ -1,0 +1,12 @@
+D:\StepSuite\StepWinForms\bin\Debug\StepWinForms.exe
+D:\StepSuite\StepWinForms\bin\Debug\StepWinForms.pdb
+D:\StepSuite\StepWinForms\bin\Debug\StepLib.dll
+D:\StepSuite\StepWinForms\bin\Debug\StepLib.pdb
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.csproj.AssemblyReference.cache
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.Form1.resources
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.Properties.Resources.resources
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.csproj.GenerateResource.cache
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.csproj.CoreCompileInputs.cache
+D:\StepSuite\StepWinForms\obj\Debug\StepWinF.518342E3.Up2Date
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.exe
+D:\StepSuite\StepWinForms\obj\Debug\StepWinForms.pdb

@@ -1,0 +1,10 @@
+D:\StepSuite\StepWeb\bin\StepWeb.dll.config
+D:\StepSuite\StepWeb\bin\StepWeb.dll
+D:\StepSuite\StepWeb\bin\StepWeb.pdb
+D:\StepSuite\StepWeb\bin\StepLib.dll
+D:\StepSuite\StepWeb\bin\StepLib.pdb
+D:\StepSuite\StepWeb\obj\Debug\StepWeb.csproj.AssemblyReference.cache
+D:\StepSuite\StepWeb\obj\Debug\StepWeb.csproj.CoreCompileInputs.cache
+D:\StepSuite\StepWeb\obj\Debug\StepWeb.csproj.Up2Date
+D:\StepSuite\StepWeb\obj\Debug\StepWeb.dll
+D:\StepSuite\StepWeb\obj\Debug\StepWeb.pdb
