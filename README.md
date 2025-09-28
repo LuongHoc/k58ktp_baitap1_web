@@ -14,7 +14,7 @@ Output: Số bước (Steps), Năng lượng tiêu hao (Calories)
 
 # -----BÀI LÀM-----
 ## 1.Tạo Solution & 4 project
-### A. Tạo Solution rỗng
+### A. Tạo Solution
 
 1. Mở Visual Studio 2022.
 2. Chọn Create a new project.
@@ -55,7 +55,7 @@ Output: Số bước (Steps), Năng lượng tiêu hao (Calories)
 
 <img width="1920" height="1031" alt="image" src="https://github.com/user-attachments/assets/b5864eed-9419-4e2c-b0db-c284f8dd9fd7" />
 
-2. Chọn Console App (.NET Framework) → Next.
+2. Tìm Console App (.NET Framework) ->Chọn  → Next.
 
 <img width="1710" height="922" alt="image" src="https://github.com/user-attachments/assets/ae14ad92-2f95-41b6-93a5-1e7fa8ce0a26" />
 
@@ -71,7 +71,7 @@ Solution Explorer → StepConsole → chuột phải References → Add Referenc
 
 <img width="1907" height="1020" alt="image" src="https://github.com/user-attachments/assets/99bee6cb-d23e-492e-96b8-f61df9e42318" />
 
-<img width="1711" height="928" alt="image" src="https://github.com/user-attachments/assets/9b5a20d3-3ca8-4eeb-a2bc-8e7de2b438b0" />
+<img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/1e87531f-32af-434a-a0b5-514d3a45f8ac" />
 
 5. Ctrl+Shift+B (Build) → Run
 <img width="1909" height="1011" alt="image" src="https://github.com/user-attachments/assets/744aaae5-ffe8-49e6-a80e-41b1a43dbdb8" />
@@ -81,7 +81,7 @@ Solution Explorer → StepConsole → chuột phải References → Add Referenc
 
 <img width="1887" height="1024" alt="image" src="https://github.com/user-attachments/assets/0f181f6e-cede-4644-970e-4b9289454678" />
 
-2. Chọn Windows Forms App (.NET Framework)->Next.
+2. Tìm Windows Forms App (.NET Framework)->Chọn ->Next.
 
 <img width="1899" height="1010" alt="image" src="https://github.com/user-attachments/assets/cd81f6d9-c065-4aa3-ace4-cf20a8119677" />
 
@@ -121,18 +121,19 @@ Tạo giao diện
 
 <img width="1887" height="1024" alt="image" src="https://github.com/user-attachments/assets/0f181f6e-cede-4644-970e-4b9289454678" />
 
-2. Chọn ASP.NET Web Application (.NET Framework)->Next.
+2. Tìm ASP.NET Web Application (.NET Framework)->Chọn ->Next.
 
 <img width="1741" height="915" alt="image" src="https://github.com/user-attachments/assets/7cc6c828-79be-4490-bb40-ce5c9c4e2281" />
 
-3. Project name: StepWeb → Create
+3. Project name: StepWeb
+ 
+   Frame work: Chọn .NET Framework 2.0 -> Create
 
 <img width="1805" height="935" alt="image" src="https://github.com/user-attachments/assets/488f5422-95e1-433a-8216-fa0657478130" />
 
 chọn template Empty → Create.
 
 <img width="1627" height="936" alt="image" src="https://github.com/user-attachments/assets/5e6de15a-7500-4d75-8e9e-2d31848a3d4a" />
-
 
 4. Thêm tham chiếu:
 
@@ -141,7 +142,6 @@ StepWeb → References → Add Reference… → Projects → tích StepLib → O
 <img width="1901" height="1021" alt="image" src="https://github.com/user-attachments/assets/722aee77-a017-4893-b682-da1d6016d3e2" />
 
 <img width="1701" height="911" alt="image" src="https://github.com/user-attachments/assets/ea3c9b15-327b-4438-a489-03e4cfba0bc4" />
-
 
 5. Thêm file index.html
 
@@ -164,5 +164,115 @@ VS tự tạo kèm api.aspx.cs.
 7. Build → Run
 <img width="1920" height="1026" alt="image" src="https://github.com/user-attachments/assets/d194f6fd-dcda-47c6-8f2f-f161a08daac1" />
 
+## Cấu hình IIS cho Project Web
+
+### A.Bật tính năng Windows cần thiết
+1. Mở Control Panel → Programs and Features.
+
+<img width="1403" height="744" alt="image" src="https://github.com/user-attachments/assets/c120a1a5-cadb-4fa2-97c5-00553ca4f72d" />
+
+2. Chọn Turn Windows features on or off
+Tích:
+
+- .NET Framework 3.5 (includes .NET 2.0 and 3.0) → OK để cài.
+
+- Internet Information Services → mở World Wide Web Services → Application Development Features → tích:
+
+ASP.NET 3.5
+
+.NET Extensibility 3.5
+
+ISAPI Extensions
+
+ISAPI Filters
+→ OK 
+
+<img width="1826" height="1018" alt="image" src="https://github.com/user-attachments/assets/0d3ecc58-3d5b-429b-9125-ce6e05785c57" />
+
+### B.Tạo domain cục bộ (hosts)
+1. Mở Notepad dưới quyền admin: Start → gõ Notepad → chuột phải → Run as administrator.
+
+<img width="1838" height="1030" alt="image" src="https://github.com/user-attachments/assets/b1ddc160-01bc-462f-a2a3-b652cf1076df" />
+
+2. File → Open… → duyệt tới C:\Windows\System32\drivers\etc → chọn All Files (.) → mở file hosts.
+
+<img width="1863" height="1009" alt="image" src="https://github.com/user-attachments/assets/8bc1201a-2f1c-494c-9245-ca1a9f0b2aa5" />
+
+<img width="1646" height="802" alt="image" src="https://github.com/user-attachments/assets/1f6df109-9a95-440c-9713-1c91a45c7c4b" />
+
+3. Thêm dòng :
+
+127.0.0.1    steps.local
+
+<img width="1803" height="1022" alt="image" src="https://github.com/user-attachments/assets/53f97bff-7ea9-4ca0-9d2e-480145a67c3b" />
+
+4. Ctrl + S để lưu.
 
 
+### C.Thêm Website & Binding domain
+
+1. Mở IIS Manager: nhấn Win, gõ inetmgr → Enter.
+
+<img width="1386" height="1024" alt="image" src="https://github.com/user-attachments/assets/440c1766-39c2-45b7-a233-65535683c13a" />
+
+2. Trong IIS Manager → cột trái Sites → chuột phải → Add Website…
+
+<img width="1917" height="1027" alt="image" src="https://github.com/user-attachments/assets/5fefbb98-2dc3-4c8c-952d-cb615bbf8264" />
+
+Site name: StepWebSite
+
+Physical path: nhấn … → trỏ đúng thư mục project StepWeb (nơi có Web.config, index.html, api.aspx, thư mục bin)
+
+Type: http
+
+IP address: All Unassigned
+
+Port: 80
+
+Host name: steps.local 
+
+Nhấn OK.
+
+<img width="1863" height="1040" alt="image" src="https://github.com/user-attachments/assets/685776c7-0077-412d-ac60-186ddb4ef086" />
+
+### D.Tạo Application Pool dùng .NET 2.0
+
+1. Mở IIS Manager → cột trái chọn Application Pools.
+
+2. Chuột phải → Add Application Pool…
+
+<img width="1656" height="844" alt="image" src="https://github.com/user-attachments/assets/4d349fdf-3577-472d-a802-69ef5f3a652b" />
+
+Name: StepWebSite
+
+.NET CLR version: v2.0.50727
+
+Managed pipeline mode: Classic
+
+Nhấn OK.
+
+<img width="1892" height="1023" alt="image" src="https://github.com/user-attachments/assets/d28e07d2-772e-4c9b-bd79-e0d777338292" />
+
+### E. Kiểm tra Handler & Default Document
+
+1. Chọn site StepWebSite → Handler Mappings
+
+2. Tìm PageHandlerFactory-ISAPI-2.0 để đảm bảo ASP.NET 3.5 và ISAPI đã bật.
+
+<img width="1730" height="946" alt="image" src="https://github.com/user-attachments/assets/927d4ca6-b3c5-4b61-a099-6a04fb3573e0" />
+
+3. Chọn site StepWebSite → Default Document
+
+Danh sách nên có index.html. Nếu chưa có:
+
+Actions (bên phải) → Add… → nhập index.html → OK.
+
+<img width="1888" height="1001" alt="image" src="https://github.com/user-attachments/assets/7f3cb906-77b9-4a06-b326-c0e5302a10bf" />
+
+### F.Kiểm tra 
+
+Mở trình duyệt → gõ http://steps.local/
+
+<img width="1906" height="1020" alt="image" src="https://github.com/user-attachments/assets/cadc0fab-7035-47c5-8f7b-129771169b90" />
+
+Kết quả Ok
